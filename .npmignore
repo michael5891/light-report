@@ -1,0 +1,8 @@
+bower_components
+build
+dist
+demo
+lib/client
+test
+node_modules
+temp

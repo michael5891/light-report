@@ -1,0 +1,28 @@
+{
+  "data": [
+    {
+      "volume": "2125",
+      "instrument": "AUD/USD",
+      "price": "21.07"
+    },
+    {
+      "volume": "2126",
+      "instrument": "AUD/USD",
+      "price": "21.08"
+    }
+  ],
+  "columns": {
+    "volume": {
+      "label": "Volume",
+      "type": "number"
+    },
+    "instrument": {
+      "label": "Pair",
+      "type": "number"
+    },
+    "price": {
+      "label": "Price",
+      "type": "number"
+    }
+  }
+}

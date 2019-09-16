@@ -1,0 +1,25 @@
+TRANSCLUDE TEST
+<br/>
+
+<input id="parentTitle" ng-model="myTitle" placeholder="Set link label"><br/>
+<textarea ng-model="myText"></textarea><br/>
+
+<h4>Direct content transclude</h4>
+<kodi data-footer="ESH NESHEK?!">
+	<a ng-href="{{myLink}}">{{myTitle}}</a>
+	<p>{{myText}}</p>
+</kodi>
+
+<br/><br/>
+
+<h4>Addressed content transclude</h4>
+<video-port>
+	<video-title>
+		<a ng-href="{{myLink}}">{{myTitle}}</a>
+	</video-title>
+	<video-body>
+		<p>{{myText}}</p>
+	</video-body>
+</video-port>
+
+<a href="http://teropa.info/blog/2015/06/09/transclusion.html">Additional transclude info can be found here...</a>

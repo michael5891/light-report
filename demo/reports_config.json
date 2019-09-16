@@ -1,0 +1,219 @@
+{
+  "deals": {
+    "source": {
+      "name": "V_SAP_TICKETS",
+      "adapter": "oracle"
+    },
+    "columns": {
+      "dealDate": {
+        "label": "Deal Date/Time",
+        "column": "TXN_TIME",
+        "type": "number",
+        "formatter": {
+          "name": false,
+          "displayFormatter": "oracle_long_datetime"
+        }
+      },
+      "instrument": {
+        "label": "Pair",
+        "column": "INSTR_SYMBOL",
+        "type": "number"
+      },
+      "executionCpty": {
+        "label": "Exe.Cpty",
+        "column": "ECP_ACCOUNT",
+        "type": "string"
+      },
+      "cpAccount": {
+        "label": "Cpty",
+        "column": "CP_ACCOUNT",
+        "type": "string",
+        "formatter": "cpty"
+      },
+      "bs": {
+        "label": "B/S",
+        "column": "FP_SIDE",
+        "type": "number"
+      },
+      "tenor": {
+        "label": "Tenor",
+        "column": "TENOR_TYPE",
+        "type": "number",
+        "sort": false
+      },
+      "tenorValue": {
+        "column": "TENOR_VALUE",
+        "type": "number",
+        "hidden": true
+      },
+      "valueDate": {
+        "label": "Val Date",
+        "column": "DATE_SETTLEMENT",
+        "type": "number",
+        "formatter": "oracle_long_date"
+      },
+      "dealtCcy": {
+        "label": "Dealt",
+        "column": "CCY_DEALT",
+        "type": "string",
+        "suggester": "ccy"
+      },
+      "contraCcy": {
+        "label": "Contra",
+        "column": "CCY_CONTRA",
+        "type": "string",
+        "suggester": "ccy"
+      },
+      "dealtAmount": {
+        "label": "Dealt Amt",
+        "queryColumn": "VC_QTY_DEALT",
+        "column": "QTY_DEALT",
+        "type": "number",
+        "formatter": {
+          "name": false,
+          "displayFormatter": {
+            "name": "amount",
+            "values": "just a test"
+          }
+        },
+        "suggester": "amount"
+      },
+      "dealtAmountExp": {
+        "column": "QTY_DEALT_EXP",
+        "type": "number",
+        "hidden": true
+      },
+      "contraAmount": {
+        "label": "Contra Amt",
+        "column": "QTY_CNTR",
+        "queryColumn": "VC_QTY_CNTR",
+        "type": "number",
+        "suggester": "amount"
+      },
+      "contraAmountExp": {
+        "column": "QTY_CNTR_EXP",
+        "type": "number",
+        "hidden": true
+      },
+      "price": {
+        "label": "Price",
+        "column": "PX_EFFECTIVE",
+        "queryColumn": "VC_PX_EFFECTIVE",
+        "type": "number"
+      },
+      "tradeDate": {
+        "label": "Trade Date",
+        "column": "TRADE_DATE",
+        "type": "number",
+        "formatter": "oracle_long_date"
+      },
+      "ticketId": {
+        "label": "Ticket",
+        "column": "TICKET_ID",
+        "type": "string"
+      },
+      "id": {
+        "label": "Deal ID",
+        "column": "EXEC_ID",
+        "type": "string"
+      },
+      "product": {
+        "label": "Prd",
+        "column": "INSTR_PRODUCT_TYPE",
+        "type": "string"
+      },
+      "floor": {
+        "label": "Floor",
+        "column": "FP_FLOOR",
+        "type": "string"
+      },
+      "floorKey": {
+        "column": "FP_FLOOR_KEY",
+        "type": "string",
+        "function": "getFloorKey",
+        "hidden": true
+      },
+      "fundCode": {
+        "label": "Fund",
+        "column": "UDF_DESIGNATED_FUND",
+        "type": "string"
+      },
+      "traderId": {
+        "label": "TID",
+        "column": "FP_TRADER",
+        "type": "string",
+        "suggester": "trader"
+      },
+      "ecn": {
+        "label": "ECN",
+        "column": "ECN",
+        "type": "string"
+      },
+      "segment": {
+        "label": "Segment",
+        "column": "ALGO_TYPE",
+        "type": "string"
+      },
+      "mt": {
+        "label": "M/T",
+        "column": "FP_EXEC_SIDE",
+        "type": "number"
+      },
+      "cptyTraderId": {
+        "label": "Cpty TID",
+        "column": "CP_TRADER",
+        "type": "string",
+        "suggester": "trader"
+      },
+      "fixDate": {
+        "label": "Fixing Date",
+        "column": "DATE_MATURITY",
+        "type": "number",
+        "formatter": "oracle_long_date"
+      },
+      "orderId": {
+        "label": "Order ID",
+        "column": "EFP_LIGHT_ORDER_ID",
+        "type": "string"
+      },
+      "priceExp": {
+        "column": "PX_EFFECTIVE_EXP",
+        "type": "number",
+        "hidden": true
+      },
+      "institutionKey": {
+        "column": "FP_INSTITUTION_KEY",
+        "type": "number",
+        "hidden": true
+      },
+      "domain": {
+        "column": "DOMAIN_ID",
+        "type": "number",
+        "hidden": true
+      },
+      "legType": {
+        "column": "LEG_TYPE",
+        "type": "number",
+        "hidden": true
+      }
+    },
+    "trackBy": "id",
+    "executionParams": {
+      "defaults": {
+        "fromRow": 0,
+        "rows": 100,
+        "maxRows": 10000,
+        "sortBy": [
+          {
+            "dealDate": "desc"
+          }
+        ]
+      },
+      "extend": {
+        "context": {
+          "version": "1.0"
+        }
+      }
+    }
+  }
+}

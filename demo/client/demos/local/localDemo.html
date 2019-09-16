@@ -1,0 +1,111 @@
+LOCAL REPORT TEST
+
+<div class="localReportDemo">
+	<div class="restMockQuery">
+		<div style="text-align: center">Rest Data Mock</div>
+		<div class="lightReportQuery"
+		     report-query="restQueryModel"
+		     data-report-auto-query="true"
+			 data-report-on-apply-query="applyQueryHandler">
+
+			<div class="tenorsFilter">
+				Select Tenor:
+				<select id="tenorSelect"
+				        ng-model="selectedTenor"
+				        ng-options="tenor.label for tenor in tenors track by tenor.value"
+
+				        report-filter="tenorFilter"
+				        data-filter-value="selectedTenor.value"
+				        data-filter-field="tenor"
+				        data-filter-type="{{reportFilterService.FIELD}}">
+				</select>
+				<button type='button' ng-click="removeTenorFilter()" style="float:right">Remove Filter</button>
+			</div>
+
+			<br>
+
+			<div class="dateFilter" filteredColname="dealDate">
+				From:
+				<input id="fromDate"
+				       type="datetime-local"
+				       ng-model="fromDate"
+
+				       report-filter="dealDateFilter"
+				       data-filter-from
+				       data-filter-field="dealDate"
+				       data-filter-type="{{reportFilterService.DATE_RANGE}}">
+				To:
+				<input id="toDate"
+				       type="datetime-local"
+				       ng-model="toDate"
+
+				       report-filter="dealDateFilter"
+				       data-filter-to
+				       data-filter-field="dealDate"
+				       data-filter-type="{{reportFilterService.DATE_RANGE}}">
+
+				<button type='button' ng-click="removeDateFilter()" style="float:right">Remove Filter</button>
+			</div>
+
+			<button type="button" ng-click="applyQueryHandler()">Get rest data</button>
+			<button type="button" ng-click="pageForward()" ng-diabled="!reportService.reportModel.hasNext">Get More</button>
+			<label ng-show="isInProgress">Loading...</label>
+		</div>
+
+		<br>
+		<div style="text-align: center">Manual Data Mock</div>
+		<input type="text" ng-model="manualData[column.field]" placeholder="Add {{column.label}}" ng-repeat="column in reportService.columns">
+		<br>
+		<button type="button" ng-click="getColumnsManually()">Load report columns</button>
+		<button type="button" ng-click="appendDataHandler()">Append Data</button>
+		<select ng-model="selectedMockDataVolume"
+		        ng-options="volume as volume for volume in mockDataVolumes">
+		</select>
+		<br>
+		<label>Time Append Data</label>
+		<button type="button" ng-click="playAppendDataHandler()">play</button>
+		<button type="button" ng-click="stopAppendDataHandler()">stop</button>
+		<button type="button" ng-click="clearDataHandler()">Clear Data</button>
+		<button type="button" ng-click="exportToCSV()">Download CSV</button>
+	</div>
+
+	<br>
+	<br>
+
+	<div light-report="reportService"
+	     data-report-auto-query="true"
+	     data-report-submit-label="Submit"
+	     data-grid-settings="gridSettings"
+	     data-on-loaded="on_loaded">
+
+		<span style="vertical-align: top; line-height: 28px;">Search by multiple values: </span>
+		<div tags-filter
+		     ng-model="selectedTags"
+		     data-settings="tagsFilterSettings"
+		     data-get-suggestions="getSuggestions"
+		     data-placeholder="Search this demo"></div>
+		
+		<div class="filterResult">
+			<div>Tags:</div>
+			<div>{{selectedTags}}</div>
+			<div>Filters:</div>
+			<div>{{reportService.queryModel.filters}}</div>
+			<div>Query Params:</div>
+			<div>{{reportService.queryModel.params}}</div>
+			<div>Query Filter:</div>
+			<div>{{queryFilter()}}</div>
+		</div>
+		<br>
+	</div>
+
+	<p>
+		({{reportService.reportModel.data.length}}) Records
+		<label ng-show="reportService.reportModel.hasNext">, Has More!</label>
+	</p>
+
+	<div>Rest onData History:</div>
+	<div class="restHistory">
+		<p ng-repeat="item in restHistory.slice().reverse() track by $index">{{item}}</p>
+	</div>
+</div>
+<iframe style="display: none" id="downloadIFrame" name="downloadIFrame"></iframe>

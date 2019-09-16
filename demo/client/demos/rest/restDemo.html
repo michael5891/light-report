@@ -1,0 +1,97 @@
+REST REPORT TEST
+<div class="restReportDemo">
+	<div light-report="reportService"
+	     data-light-report-api="reportApi"
+	     data-report-auto-query="true"
+	     data-report-submit-label="Submit"
+	     data-grid-settings="gridSettings"
+	     data-sort-directions="sortDirections"
+
+		 data-on-loaded="alertLoaded"
+		 data-on-click="onClick">
+
+		<div class="tenorsFilter">
+			Select Tenor:
+			<select id="tenorSelect"
+			        ng-model="selectedTenor"
+			        ng-options="tenor.label for tenor in tenors track by tenor.value"
+
+			        report-filter="tenorFilter"
+			        data-filter-value="selectedTenor.value"
+			        data-filter-field="tenor"
+			        data-filter-type="{{reportFilterService.FIELD}}">
+			</select>
+
+			<button type='button' ng-click="removeTenorFilter()" style="float:right">Remove Filter</button>
+		</div>
+
+		<div>
+			Type floor:
+			<input type="text"
+				   ng-model="chosenFloor"
+				   report-filter="floorFilter"
+				   data-filter-value="chosenFloor"
+				   data-filter-field="floorKey"
+				   data-filter-type="{{reportFilterService.FIELD}}">
+		</div>
+
+		<br>
+
+		<div class="dateFilter" filteredColname="dealDate">
+			From:
+			<input id="fromDate"
+			       type="datetime-local"
+			       ng-model="fromDate"
+
+			       report-filter="dealDateFilter"
+			       data-filter-from
+			       data-filter-operation=">"
+			       data-filter-field="dealDate"
+			       data-filter-type="{{reportFilterService.DATE_RANGE}}">
+			To:
+			<input id="toDate"
+			       type="datetime-local"
+			       ng-model="toDate"
+
+			       report-filter="dealDateFilter"
+			       data-filter-to
+			       data-filter-operation="<"
+			       data-filter-field="dealDate"
+			       data-filter-type="{{reportFilterService.DATE_RANGE}}">
+
+			<button type='button' ng-click="removeDateFilter()" style="float:right">Remove Filter</button>
+		</div>
+
+		<span style="vertical-align: top; line-height: 28px;">Search by multiple values: </span>
+		<div tags-filter
+		     ng-model="selectedTags"
+		     data-get-suggestions="getSuggestions"
+		     data-placeholder="Search this demo"></div>
+
+		<div class="filterResult">
+			<div>Filters:</div>
+			<div>{{reportService.queryModel.filters}}</div>
+			<div>Query Params:</div>
+			<div>{{reportService.queryModel.params}}</div>
+			<div>Query Filter:</div>
+			<div>{{queryFilter()}}</div>
+		</div>
+
+		<br>
+
+		<button type="button" ng-click="pageForward()" ng-diabled="!reportService.reportModel.hasNext">Get More</button>
+		<label ng-show="reportService.isInProgress">Loading...</label>
+		<br>
+		<br>
+	</div>
+
+	<p>
+		({{reportService.reportModel.data.length}}) Records
+		<label ng-show="reportService.reportModel.hasNext">, Has More!</label>
+	</p>
+
+	<div>Rest onData History:</div>
+	<div class="restHistory">
+		<p ng-repeat="item in restHistory.slice().reverse() track by $index">{{item}}</p>
+	</div>
+</div>

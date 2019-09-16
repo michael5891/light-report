@@ -1,0 +1,18 @@
+{
+	"extends": "../.jshintrc",
+	"mocha": true,
+	"globals": {
+		/* MOCHA */
+		"inject": false,
+		"assert": false,
+		"describe": false,
+		"it": false,
+		"before": false,
+		"beforeEach": false,
+		"after": false,
+		"afterEach": false
+	},
+	"options": {
+		"mocha": true
+	}
+}

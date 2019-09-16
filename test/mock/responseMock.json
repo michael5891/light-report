@@ -1,0 +1,175 @@
+{
+  "data": [
+    {
+      "dealDate": "01 Jun 16 14:58:25",
+      "instrument": "AUD/USD",
+      "executionCpty": "ZBBI",
+      "cpAccount": "ZBBI",
+      "bs": 0,
+      "tenor": 12,
+      "valueDate": "03 Jun 16",
+      "dealtCcy": "AUD",
+      "contraCcy": "USD",
+      "dealtAmount": 500000000,
+      "contraAmount": 500205000000,
+      "price": 100041,
+      "tradeDate": "01 Jun 16",
+      "ticketId": "FF64-0059-0022-00-100000",
+      "id": "FF64-0059-0022-00",
+      "product": 0,
+      "floor": "LCN3",
+      "traderId": "CN3",
+      "ecn": 2,
+      "segment": 1,
+      "mt": "T",
+      "fixDate": "",
+      "orderId": "1328-2D72-000D"
+    },
+    {
+      "dealDate": "01 Jun 16 14:58:23",
+      "instrument": "AUD/USD",
+      "executionCpty": "ZBBI",
+      "cpAccount": "ZBBI",
+      "bs": 1,
+      "tenor": 12,
+      "valueDate": "03 Jun 16",
+      "dealtCcy": "AUD",
+      "contraCcy": "USD",
+      "dealtAmount": 100000000,
+      "contraAmount": 100039000000,
+      "price": 100039,
+      "tradeDate": "01 Jun 16",
+      "ticketId": "FF64-0059-0021-00-100000",
+      "id": "FF64-0059-0021-00",
+      "product": 0,
+      "floor": "LCN3",
+      "traderId": "CN3",
+      "ecn": 2,
+      "segment": 1,
+      "mt": "T",
+      "fixDate": "",
+      "orderId": "1328-2D72-000C"
+    }
+  ],
+  "scnId": 92811612957,
+  "requestParams": {
+    "fromRow": 0,
+    "rows": 150,
+    "clientParams": {
+      "seqId": "1"
+    },
+    "outputFormat": "json",
+    "maxRows": 10000,
+    "sortBy": [
+      {
+        "dealDate": "desc"
+      }
+    ]
+  },
+  "hasNext": true,
+  "rows": 150,
+  "executionTime": 1464878320114,
+  "columns": {
+    "dealDate": {
+      "label": "Deal Date/Time",
+      "type": "number"
+    },
+    "instrument": {
+      "label": "Pair",
+      "type": "number"
+    },
+    "executionCpty": {
+      "label": "Exe.Cpty",
+      "type": "string"
+    },
+    "cpAccount": {
+      "label": "Cpty",
+      "type": "string"
+    },
+    "bs": {
+      "label": "B/S",
+      "type": "number"
+    },
+    "tenor": {
+      "label": "Tenor",
+      "sort": false,
+      "type": "number"
+    },
+    "valueDate": {
+      "label": "Val Date",
+      "type": "number"
+    },
+    "dealtCcy": {
+      "label": "Dealt",
+      "type": "string"
+    },
+    "contraCcy": {
+      "label": "Contra",
+      "type": "string"
+    },
+    "dealtAmount": {
+      "label": "Dealt Amt",
+      "type": "number"
+    },
+    "contraAmount": {
+      "label": "Contra Amt",
+      "type": "number"
+    },
+    "price": {
+      "label": "Price",
+      "type": "number"
+    },
+    "tradeDate": {
+      "label": "Trade Date",
+      "type": "number"
+    },
+    "ticketId": {
+      "label": "Ticket",
+      "type": "string"
+    },
+    "id": {
+      "label": "Deal ID",
+      "type": "string"
+    },
+    "product": {
+      "label": "Prd",
+      "type": "string"
+    },
+    "floor": {
+      "label": "Floor",
+      "type": "string"
+    },
+    "fundCode": {
+      "label": "Fund",
+      "type": "string"
+    },
+    "traderId": {
+      "label": "TID",
+      "type": "string"
+    },
+    "ecn": {
+      "label": "ECN",
+      "type": "string"
+    },
+    "segment": {
+      "label": "Segment",
+      "type": "string"
+    },
+    "mt": {
+      "label": "M/T",
+      "type": "number"
+    },
+    "cptyTraderId": {
+      "label": "Cpty TID",
+      "type": "string"
+    },
+    "fixDate": {
+      "label": "Fixing Date",
+      "type": "number"
+    },
+    "orderId": {
+      "label": "Order ID",
+      "type": "string"
+    }
+  }
+}

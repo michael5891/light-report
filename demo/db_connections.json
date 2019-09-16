@@ -1,0 +1,7 @@
+{
+    "oracle": {
+      "connectString": "(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=10.20.44.158)(PORT=1521))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=PTDB)))",
+      "user": "sapphire2",
+      "password": "sapphire2"
+    }
+}

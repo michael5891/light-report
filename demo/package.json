@@ -1,0 +1,23 @@
+{
+  "name": "web-reports-server-demo",
+  "license": "LIGHT",
+  "version": "0.0.1",
+  "main": "server/app.js",
+  "dependencies": {
+    "express": "latest",
+    "path": "latest",
+    "morgan": "latest",
+    "oracledb": "latest",
+    "simple-oracledb": "latest"
+  },
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-less": "^1.3.0",
+    "grunt-contrib-uglify": "^1.0.1",
+    "grunt-contrib-watch": "^1.0.0",
+    "jit-grunt": "^0.10.0"
+  },
+  "scripts": {
+    "watch": "grunt watch-less"
+  }
+}

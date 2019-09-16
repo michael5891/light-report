@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html ng-app="demoApp">
+<head lang="en">
+	<meta charset="UTF-8">
+
+	<title>Reporter Demo</title>
+
+	<link rel="stylesheet" type="text/css" href="/bower_components/stork-grid/dist/data-grid.min.css">
+	<link rel="stylesheet" type="text/css" href="/bower_components/stork-grid/dist/simple-theme.min.css">
+	<link rel="stylesheet" type="text/css" href="/bower_components/stork-tags/dist/tags-input.min.css">
+	<link rel="stylesheet" type="text/css" href="/bower_components/stork-tags/dist/simple-theme.min.css">
+
+	<script src="/bower_components/angular/angular.js"></script>
+	<script src="/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+	<script src="/bower_components/jquery/dist/jquery.js"></script>
+	<script src="/bower_components/stork-shims/dist/shims.js"></script>
+	<script src="/bower_components/stork-grid/dist/data-grid.js"></script>
+	<script src="/bower_components/stork-tags/dist/tags-input.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="dist/client/light-report.css">
+	<link rel="stylesheet" type="text/css" href="/client/demoApp.css">
+
+	<script src="dist/client/light-report.js"></script>
+	<script src="/client/demoApp.js"></script>
+	<script src="/client/demos/rest/restDemoCtrl.js"></script>
+	<script src="/client/demos/local/localDemoCtrl.js"></script>
+	<script src="/client/demos/transclude/transcludeDemoCtrl.js"></script>
+	<script src="/client/demos/transclude/videoPort.drv.js"></script>
+	<script src="/client/demos/transclude/kodi.drv.js"></script>
+</head>
+
+<body ng-controller="demoCtrl as ctrl">
+
+<p>LIGHT REPORT DEMO</p>
+<label>Demos: </label>
+<a ui-sref="restDemo">Rest</a>
+<a ui-sref="localDemo">Local</a>
+<a ui-sref="transcludeDemo">Transclude</a>
+<br>
+<br>
+<div ui-view></div>
+
+</body>
+</html>

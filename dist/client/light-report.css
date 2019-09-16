@@ -1,0 +1,39 @@
+* {
+	box-sizing: border-box;
+}
+
+[light-report] {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+.lightReportQuery {
+	width: 100%;
+}
+
+.lightReportGrid {
+	height: 100%;
+	width: 100%;
+}
+
+.lightReportGrid .header th div {
+	position: relative;
+}
+.lightReportGrid .header th span::after {
+	content: "";
+	display: inline-block;
+	position: relative;
+	top: -3px;
+	left: 5px;
+	width: 0;
+	height: 0;
+	border: 3px solid transparent;
+}
+.lightReportGrid .header th.sorted_asc span::after {
+	border-bottom-color: red;
+}
+.lightReportGrid .header th.sorted_desc span::after {
+	border-top-color: red;
+	top: 1px;
+}

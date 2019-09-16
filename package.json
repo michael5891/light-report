@@ -1,0 +1,69 @@
+{
+  "name": "light-report",
+  "license": "LIGHT",
+  "publishConfig": {
+    "registry": "http://10.20.34.120:4873"
+  },
+  "version": "1.3.633",
+  "main": "index.js",
+  "engines": {
+    "node": ">=4.0.0"
+  },
+  "dependencies": {
+    "angular": "1.5.5",
+    "compression": "1.1.0",
+    "express": "4.9.0",
+    "hogan.js": "3.0.2",
+    "jquery": "^2.2.3",
+    "json2csv": "3.11.1",
+    "lodash": "^3.10.0",
+    "promise": "6.0.0",
+    "stork-grid": "^1.10.6",
+    "stork-tags": "^1.7.11"
+  },
+  "devDependencies": {
+    "angular-mocks": "~1.5.5",
+    "angular-ui-router": "latest",
+    "chai": "^3.5.0",
+    "grunt": "latest",
+    "grunt-cli": "latest",
+    "grunt-browserify": "latest",
+    "grunt-contrib-clean": "0.7.0",
+    "grunt-contrib-concat": "latest",
+    "grunt-contrib-copy": "latest",
+    "grunt-contrib-uglify": "latest",
+    "grunt-contrib-watch": "latest",
+    "grunt-eslint": "latest",
+    "grunt-execute": "latest",
+    "grunt-html2js": "latest",
+    "grunt-jscs": "latest",
+    "grunt-jsdoc-to-markdown": "latest",
+    "grunt-karma": "latest",
+    "grunt-mocha-test": "latest",
+    "husky": "^0.11.7",
+    "jit-grunt": "latest",
+    "karma": "latest",
+    "karma-chai": "latest",
+    "karma-jasmine": "latest",
+    "karma-mocha": "latest",
+    "karma-phantomjs-launcher": "latest",
+    "karma-read-json": "latest",
+    "karma-sinon-chai": "latest",
+    "load-grunt-tasks": "latest",
+    "lolex": "latest",
+    "mocha": "latest",
+    "phantomjs": "latest",
+    "phantomjs-prebuilt": "latest",
+    "sinon": "latest",
+    "sinon-chai": "latest",
+    "time-grunt": "latest"
+  },
+  "scripts": {
+    "postinstall": "cd demo && npm install",
+    "lint": "eslint -c ./.eslintrc.js ./lib/server ./lib/common && eslint -c ./lib/client/.eslintrc.js ./lib/client",
+    "prepush": "grunt docs",
+    "test": "grunt test",
+    "demo": "node demo/app.js",
+    "docs": "jsdoc2md lib/client/models/reportQuery.js > bla.md"
+  }
+}

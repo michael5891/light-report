@@ -1,0 +1,41 @@
+div[light-report] {
+	width: 100%;
+	height: 600px;
+	overflow: hidden;
+
+	background-color: #cacaca;
+	border: 2px solid #2C2C2C;
+
+	.lightReportQueryForm {
+		margin-bottom: 10px;
+
+		[tags-filter] {
+			display: inline-flex;
+			height: 32px;
+			width: 50%;
+			background-color: white;
+		}
+	}
+
+	.stork-grid {
+		border: 0 none !important;
+		box-shadow: 0 -4px 4px -1px rgba(0,0,0,0.3);
+
+		.data table td > div {
+			white-space: nowrap;
+			text-overflow: ellipsis;
+		}
+	}
+}
+
+.stork-tags-dropdown-container {
+	z-index: 1;
+}
+
+.restHistory {
+	width: 100%;
+	height: 200px;
+	background-color: #a2c4fb;
+	border: 2px solid #2C2C2C;
+	overflow: scroll;
+}

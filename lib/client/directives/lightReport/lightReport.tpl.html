@@ -1,0 +1,21 @@
+<div class="lightReportQuery"
+     report-query="reportService.queryModel"
+     data-report-auto-query="{{reportAutoQuery}}"
+     data-report-submit-label="{{reportSubmitLabel}}" >
+	<ng-transclude class="lightReportQueryTrunsclude"></ng-transclude>
+</div>
+
+<div class="lightReportGrid"
+     ng-model="reportService.reportModel.data"
+     report-grid
+     data-grid-settings="gridSettings"
+
+     data-on-loaded="onGridLoadedHandler"
+	 data-on-sort="onGridSortHandler"
+	 data-on-select="onSelect"
+	 data-on-double-select="onDoubleSelect"
+	 data-on-click="onClick"
+	 data-on-column-resize="onColumnResize"
+	 data-on-scroll-hit-bottom="onScrollHitBottom">
+
+</div>
