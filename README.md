@@ -1,6 +1,8 @@
 # LIGHT REPORT
 
-The most awesome grid report.
+Light wait blazing fast grid report.
+
+Pure JS implementation wrapped by angularJS framework.
 
 ### Installation
 ```
