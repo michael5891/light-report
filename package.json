@@ -17,7 +17,7 @@
     "hogan.js": "3.0.2",
     "jquery": "^2.2.3",
     "json2csv": "3.11.1",
-    "lodash": "^3.10.0",
+    "lodash": "^4.17.19",
     "promise": "6.0.0",
     "stork-grid": "^1.10.6",
     "stork-tags": "^1.7.11"
