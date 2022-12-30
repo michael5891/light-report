@@ -16,7 +16,7 @@
     "express": "4.9.0",
     "hogan.js": "3.0.2",
     "jquery": "^2.2.3",
-    "json2csv": "3.11.1",
+    "json2csv": "5.0.7",
     "lodash": "^3.10.0",
     "promise": "6.0.0",
     "stork-grid": "^1.10.6",
